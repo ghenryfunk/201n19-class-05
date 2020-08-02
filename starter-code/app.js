@@ -85,17 +85,24 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-  var sum1 = sum(testArray[0], testArray[1]) [0];
-  var theSum = sum(sum1, testArray[2]) [0];
-  // var theSum = sum((sum(testArray[0], testArray[1]) [0]), testArray[2]) [0];
-  // 
-  // for (var i = 0; i < testArray.length; i++) {
-  //   var array = testArray[i];
-  //   console.log(array);
+  // var sum1 = sum(testArray[0], testArray[1]) [0];
+  // var theSum = sum(sum1, testArray[2]) [0];
+  // // var theSum = sum((sum(testArray[0], testArray[1]) [0]), testArray[2]) [0];
+  // // 
+  // // for (var i = 0; i < testArray.length; i++) {
+  // //   var array = testArray[i];
+  // //   console.log(array);
   
-  var theString = `${testArray} was passed in as an array of numbers, and ${theSum} is their sum.`
-  console.log(theString);
-  return [theSum, theString];
+  // var theString = `${testArray} was passed in as an array of numbers, and ${theSum} is their sum.`
+  // console.log(theString);
+  // return [theSum, theString];
+  var sum1 = 0;
+  for(var i = 0; i < testArray.length; i++) {
+    sum1 = sum(sum1, testArray[i]) [0];
+    // console.log(sum1);
+  }
+  var theString = `${testArray} was passed in as an array of numbers, and ${sum1} is their sum.`
+  return [sum1, theString];
 }
 
 // Here is the test for sumArray(); uncomment it to run it

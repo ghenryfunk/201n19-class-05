@@ -31,7 +31,7 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
   var theProduct = a * b;
-  var theString = `The product of ${a} and ${b} is ${theProduct}.`
+  var theString = `The product of ${a} and ${b} is ${theProduct}.`;
   // console.log(multiply);
   return [theProduct, theString];
 }
@@ -60,7 +60,7 @@ function sumAndMultiply(a, b, c) { //eslint-disable-line
   var theSum = sum(sum1, c)[0];
   var theProduct = multiply(multiply(a,b)[0], c)[0];
   var theSumString = `${a} and ${b} and ${c} sum to ${theSum}.`
-  var theProductString = `The product of ${a} and ${b} and ${c} is ${theProduct}.`
+  var theProductString = `The product of ${a} and ${b} and ${c} is ${theProduct}.`;
   console.log(theSum, theProduct);
   return [theSum, theProduct, theSumString, theProductString]; 
 }
@@ -101,7 +101,7 @@ function sumArray(sumArr) { //eslint-disable-line
     sum1 = sum(sum1, testArray[i]) [0];
     // console.log(sum1);
   }
-  var theString = `${testArray} was passed in as an array of numbers, and ${sum1} is their sum.`
+  var theString = `${testArray} was passed in as an array of numbers, and ${sum1} is their sum.`;
   return [sum1, theString];
 }
 
@@ -128,7 +128,7 @@ function multiplyArray(multArr) { //eslint-disable-line
     multi1 = multiply(multi1, testArray[i]) [0];
   }
   // console.log(multi1);
-  var theString = `The numbers ${testArray} have a product of ${multi1}.`
+  var theString = `The numbers ${testArray} have a product of ${multi1}.`;
   return [multi1, theString];
 }
 
@@ -157,10 +157,19 @@ Test this function by hand in the console to get it working, and when you think 
 var testDynamicArray = [1,2,3,4,5]; //eslint-disable-line
 
 function multiplyAnyArray(dynamicArray) { //eslint-disable-line
-
+  var dyn1 = 1;
+  for (var i = 0; i < testDynamicArray.length; i++) {
+    dyn1 = multiply(dyn1, dynamicArray[i]) [0];
+    console.log(dyn1);
+  }
+  var theString = `The numbers ${dynamicArray} have a product of ${dyn1}.`;
+  console.log(dynamicArray);
+  console.log(theString);
+  return [dyn1, theString];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
-// testMultiplyAnyArray(testDynamicArray);
+testMultiplyAnyArray(testDynamicArray);
+
 
 // Once you get the test passing, do an a-c-p cycle and synchronize the code between GitHub and your laptop. You're done! Submit the link to the repo following the instructions in Canvas.
